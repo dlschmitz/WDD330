@@ -1,0 +1,11 @@
+textarea {
+    margin: 1em auto;
+    padding: 1em;
+    width: 600px;
+    height: 250px;
+    background-color: rgba(159, 248, 248, 0.753);
+  }
+
+  button {
+      margin: 1em auto;
+  }
