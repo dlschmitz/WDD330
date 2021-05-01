@@ -47,8 +47,11 @@ button {
     margin: .5rem;
     max-width: 75px;
     width: 157px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 input {
     margin: .5rem;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
 }

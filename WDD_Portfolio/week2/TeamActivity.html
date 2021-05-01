@@ -17,8 +17,7 @@
         <div class="Step1">
             <h1>Step 1</h1>
             <div class="layout">
-                <label for="value1"></label><input id="value1" placeholder="Enter a number"
-                    type="number">
+                <label for="value1"></label><input id="value1" placeholder="Enter a number" type="number">
                 <button id="button1" onclick="firstNumber()">Enter</button>
                 <p id="results1"></p>
             </div>
@@ -26,8 +25,7 @@
         <div class="Step2">
             <h1>Step 2</h1>
             <div class="layout">
-                <label for="value2"></label><input id="value2" placeholder="Enter a number"
-                    type="number">
+                <label for="value2"></label><input id="value2" placeholder="Enter a number" type="number">
                 <button id="button2" onclick="secondNumber()">Enter</button>
                 <p id="results2"></p>
             </div>
@@ -35,11 +33,9 @@
         <div class="Step3">
             <h1>Step 3</h1>
             <div class="layout">
-                <label for="value3"></label><input id="value3" placeholder="Enter a number"
-                        type="number"></p>
-                <label for="value4"></label><input id="value4" placeholder="Enter a number"
-                        type="number">
-                    <button id="button3" onclick="addition3()">Add</button></p>
+                <label for="value3"></label><input id="value3" placeholder="Enter a number" type="number"></p>
+                <label for="value4"></label><input id="value4" placeholder="Enter a number" type="number">
+                <button id="button3" onclick="addition3()">Add</button></p>
                 <p id="results3"></p>
             </div>
         </div>
@@ -49,11 +45,15 @@
         <div class="layout">
             <input id="lastNum1" placeholder="Enter a number" type="number">
             <input id="lastNum2" placeholder="Enter a number" type="number">
-            <button id="add" onclick="finalCall(stretchAdd,'The added value is: ')">Add</button>
-            <button id="subtract" onclick="finalCall(stretchSubtract, 'The subtracted value is: ')">Subtract</button>
-            <button id="multiply" onclick="finalCall(stretchMultiply, 'The multiplied value is: ')">Multiply</button>
-            <button id="divide" onclick="finalCall(stretchDivide, 'The divided value is: ')">Divide</button>
-            <p id="finalResults"></p>
+            <div class="newButtons">
+                <button id="add" onclick="finalCall(stretchAdd,'The added value is: ')">Add</button>
+                <button id="subtract"
+                    onclick="finalCall(stretchSubtract, 'The subtracted value is: ')">Subtract</button>
+                <button id="multiply"
+                    onclick="finalCall(stretchMultiply, 'The multiplied value is: ')">Multiply</button>
+                <button id="divide" onclick="finalCall(stretchDivide, 'The divided value is: ')">Divide</button>
+                <p id="finalResults"></p>
+            </div>
         </div>
     </div>
 
