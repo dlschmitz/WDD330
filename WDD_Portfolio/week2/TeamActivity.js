@@ -1,26 +1,26 @@
-/* script for requirement 1 */
+/*Attempting to write out the first step*/
 
-function displayNum(){
-    const num1 = document.getElementById("input1").value;
-    document.getElementById("output1").innerHTML = 'You entered: ' + num1 + '.';
+function firstNumber(){
+    const num1 = document.getElementById("value1").value;
+    document.getElementById("results1").innerHTML = 'You entered the number: ' + num1;
 }
 
-/* script for requirement 2 */
-function sumUp() {
-    const num2 = document.getElementById("input2").value;
+/*Attempting to complete the second step*/
+function secondNumber() {
+    const num2 = document.getElementById("value2").value;
 
-    // set input to a number
+    /*This should set in value to a number*/
     const num2Int = parseInt(num2);
 
-    // only calculate if the entry is a number
+    /*This should only work if there is a number entered in here*/
     if (!isNaN(num2Int)) {
-        document.getElementById("output2").innerHTML = 'Total sum: ' + sum(num2Int);
+        document.getElementById("results2").innerHTML = 'The total sum of your numbers is: ' + total(num2Int);
     }
 
 }
 
-/* calculate the sum */
-function sum(input) {
+/*The should get the sum of all numbers and be able to be pulled into the secondNumber function*/
+function total(input) {
     let sum = 0;
 
     for (let i = 1; i <= input; i++) {
@@ -30,55 +30,57 @@ function sum(input) {
     return sum;
 }
 
-/* script for requirement 3 */
-function addUp() {
-    const num3 = document.getElementById("input3").value;
-    const num4 = document.getElementById("input4").value;
+/*Attempting to complete the third step*/
+function addition3() {
+    const num3 = document.getElementById("value3").value;
+    const num4 = document.getElementById("value4").value;
 
-    const num3Float = parseFloat(num3);
-    const num4Float = parseFloat(num4);
+    /*This should set in value to each number*/
+    const num3Int = parseInt(num3);
+    const num4Int = parseInt(num4);
 
-    if (!isNaN(num3Float) && !isNaN(num4Float)) {
-        document.getElementById("output3").innerHTML = `${num3Float} + ${num4Float} = ${add(num3Float, num4Float)}`;
+    if (!isNaN(num3Int) && !isNaN(num4Int)) {
+        document.getElementById("results3").innerHTML = 'If you add ' + num3Int + ' and ' + num4Int + ' your total is: ' + add(num3Int, num4Int);
     }
 }
 
-/* add them up */
+/*this should add the two values together*/
 function add(num1, num2) {
     return num1 + num2;
 }
 
-/* Stretch scripts */
-
+/*these should be the functions that should work for the stretch goals*/
 function updateOutput(opPerf, value) {
-    document.getElementById('stretchOutput').innerHTML = `${opPerf}: ${value}`;
+    document.getElementById('finalResults').innerHTML = `${opPerf} ${value}`;
 }
 
 /* return value entered as a number (float) */
 function getFloat(number) {
     const num = document.getElementById(number).value;
-    const numFloat = parseFloat(num);
-    if (!isNaN(numFloat)) {
-        return numFloat;
+    const floatNum = parseFloat(num);
+    if (!isNaN(floatNum)) {
+        return floatNum;
     } else {
         return 0;
     }
 }
 
-/* arrow function addition */
-const addStretch = (num1, num2) => num1 + num2;
+/*adding function*/
+const stretchAdd = function(num1, num2) {
+    return num1 + num2;
+};
 
-/* expression function multiplication */
-const multStretch = function(num1, num2) {
+/*times function*/
+const stretchMultiply = function(num1, num2) {
     return num1 * num2;
 };
 
 /* declared function subtraction and division */
-function subStretch(num1, num2) {
+function stretchSubtract(num1, num2) {
     return num1 - num2;
 }
 
-function quotientStretch(num1, num2) {
+function stretchDivide(num1, num2) {
     if (num1 === 0 || num2 === 0) {
         return 0;
     } else {
@@ -86,7 +88,7 @@ function quotientStretch(num1, num2) {
     }
 }
 
-function callOperation(operation, opPerf) {
-    const finalValue = operation(getFloat('stretchNum1'), getFloat('stretchNum2'));
+function finalCall(operation, opPerf) {
+    const finalValue = operation(getFloat('lastNum1'), getFloat('lasthNum2'));
     updateOutput(opPerf, finalValue);
 }

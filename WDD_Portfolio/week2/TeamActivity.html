@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 2 Team Activityt</title>
     <meta name="author" content="Daniel Schmitz">
-    <meta name="description"
-        content="This page will use functions to help display results of different math formulas.">
+    <meta name="description" content="This page will use functions to help display results of different math formulas.">
     <link rel="stylesheet" href="TeamActivity.css">
 
 
 </head>
+
 <body>
-    <div class="Reqs">
-        <div class="Req1">
-            <!-- Requirement 1 -->
-            <h1>Requirement 1</h1>
-            <label for="input1">Enter Number: </label><input id="input1" placeholder="Enter Number"/>
-            <button id="button1" onclick="displayNum()">Submit</button>
-            <p id="output1"></p>
+    <div class="Steps">
+        <div class="Step1">
+            <h1>Step 1</h1>
+            <div class="layout">
+                <label for="value1"></label><input id="value1" placeholder="Enter a number"
+                    type="number">
+                <button id="button1" onclick="firstNumber()">Enter</button>
+                <p id="results1"></p>
+            </div>
         </div>
-        <div class="Req2">
-            <!-- Requirement 2 -->
-            <h1>Requirement 2</h1>
-            <label for="input2">Enter Number: </label><input id="input2" placeholder="Enter Number"/>
-            <button id="button2" onclick="sumUp()">Submit</button>
-            <p id="output2"></p>
+        <div class="Step2">
+            <h1>Step 2</h1>
+            <div class="layout">
+                <label for="value2"></label><input id="value2" placeholder="Enter a number"
+                    type="number">
+                <button id="button2" onclick="secondNumber()">Enter</button>
+                <p id="results2"></p>
+            </div>
         </div>
-        <div class="Req3">
-            <!-- Requirement 3 -->
-            <h1>Requirement 3</h1>
-            <p><label for="input3">Enter A Number: </label><input id="input3" placeholder="Enter Number"/></p>
-            <p><label for="input4">Enter Another Number: </label><input id="input4" placeholder="Enter Number"/>
-            <button id="button3" onclick="addUp()">Add</button></p>
-            <p id="output3"></p>
+        <div class="Step3">
+            <h1>Step 3</h1>
+            <div class="layout">
+                <label for="value3"></label><input id="value3" placeholder="Enter a number"
+                        type="number"></p>
+                <label for="value4"></label><input id="value4" placeholder="Enter a number"
+                        type="number">
+                    <button id="button3" onclick="addition3()">Add</button></p>
+                <p id="results3"></p>
+            </div>
         </div>
     </div>
     <div class="stretch">
-        <h1>Stretch Attempt</h1>
-        <input id="stretchNum1" placeholder="enter a number" type="number"/>
-        <input id="stretchNum2" placeholder="enter a number" type="number"/>
-        <button id="addition" onclick="callOperation(addStretch,'Sum')">+</button>
-        <button id="subtraction" onclick="callOperation(subStretch, 'Difference')">-</button>
-        <button id="multiplication" onclick="callOperation(multStretch, 'Factor')">*</button>
-        <button id="division" onclick="callOperation(quotientStretch, 'Quotient')">/</button>
-        <p id="stretchOutput"></p>
+        <h1>Stretch Goals</h1>
+        <div class="layout">
+            <input id="lastNum1" placeholder="Enter a number" type="number">
+            <input id="lastNum2" placeholder="Enter a number" type="number">
+            <button id="add" onclick="finalCall(stretchAdd,'The added value is: ')">Add</button>
+            <button id="subtract" onclick="finalCall(stretchSubtract, 'The subtracted value is: ')">Subtract</button>
+            <button id="multiply" onclick="finalCall(stretchMultiply, 'The multiplied value is: ')">Multiply</button>
+            <button id="divide" onclick="finalCall(stretchDivide, 'The divided value is: ')">Divide</button>
+            <p id="finalResults"></p>
+        </div>
     </div>
 
 
     <script src="TeamActivity.js"></script>
 </body>
+
 </html>
