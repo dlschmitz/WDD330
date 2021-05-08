@@ -1,0 +1,61 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&family=Open+Sans&display=swap');
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    max-width: 1050px;
+    margin: 0 auto;
+    background-color: rgb(128, 255, 181);
+}
+
+.ex {
+    flex-direction: row;
+}
+
+h1 {
+    background-color: rgb(36, 87, 87);
+    font-family: 'Hind Siliguri', sans-serif;
+    text-align: center;
+    color: aliceblue;
+    margin: 0;
+}
+
+.Steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+}
+
+.Step1, .Step2, .Step3 {
+    text-align: center;
+    min-width: 300px;
+}
+
+.stretch {
+        text-align: center;
+        padding: 1rem 2%;
+    }
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+}
+
+button {
+    margin: .5rem;
+    max-width: 75px;
+    width: 157px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    margin: .5rem;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
