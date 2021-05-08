@@ -32,7 +32,7 @@
         <h1>Exercise 4</h1>
         <div class="layout">
             <p>How many total years did the inventors live?</p>
-            <button id="button" onclick="finalResults(approxAge, 'lifeSpan')">Total years lived</button>
+            <button id="button" onclick="finalResults(updateTotalAge, 'lifeSpan')">Total years lived</button>
             <div id="lifeSpan"></div>
         </div>
         <h1>Exercise 5</h1>
@@ -41,6 +41,12 @@
             <button id="button" onclick="finalResults(youngToOld, 'seniority')">Seniority</button>
             <div id="seniority"></div>
         </div>
+        <h1>Exercise 8</h1>
+        <div class="layout">
+        <p>The number of times walk will appear in the array.</p>
+        <button id="button" onclick="displaySingleEntity(countOccurances(data, 'walk'),'sortReduce')">Number of Walks</button>
+        <p id="sortReduce"></p>
+    </div>
     </div>
 
     <script src="js/exercises.js"></script>

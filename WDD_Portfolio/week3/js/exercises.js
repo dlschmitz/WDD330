@@ -124,7 +124,7 @@
      // Array.prototype.filter()
      // 1. Filter the list of inventors for those who were born in the 1500's
 
-     const oldGuys = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
+     const oldGuys = inventors.filter(inventor => (inventor.year > 1500 && inventor.year < 1600));
 
      // Array.prototype.map()
      // 2. Give us an array of the inventors' first and last names
@@ -139,7 +139,12 @@
      // Array.prototype.reduce()
      // 4. How many years did all the inventors live?
 
-     const approxAge = inventors.reduce((final, inventor) => {return final + (inventor.passed - inventor.year)}, 0);
+     const approxAge = inventors.reduce((final, inventor) => final + (inventor.passed - inventor.year), 0);
+
+     function updateTotalAge() {
+        return `<ul><li>${approxAge}</li></ul>`;
+    
+    }
 
      // 5. Sort the inventors by years lived
 
@@ -177,6 +182,20 @@
          'truck'
      ];
 
+     const countOccurances = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
+     function countThem() {
+        const car = countOccurances(data,'car');
+        const truck = countOccurances(data,'truck');
+        const bike = countOccurances(data,'bike');
+        const van = countOccurances(data,'van');
+        const walk = countOccurances(data,'walk');
+    
+        return `<ul><li>Cars: ${car}</li><li>Trucks: ${truck}</li><li>Bikes: ${bike}</li><li>Vans: ${van}</li><li>Walkers: ${walk}</li></ul>`
+    
+    }
+
+
      function finalResults(invList, outcome) {
         let display = '<ol>';
         for (let i = 0, total = invList.length; i < total; i++) {
@@ -185,9 +204,8 @@
                 display += invList[i].first + ' ' + invList[i].last;
                 display += '<ul>'
                 display += '<li>'
-                display += 'Born: ' + inventors[i].year + ' and ' +'Deceased: ' + inventors[i].passed
                     if(invList === youngToOld) {
-                    display += " - Approx. age at time of death: " + (invList[i].passed - invList[i].year);
+                    display += "Approx. age at time of death: " + (invList[i].passed - invList[i].year);
                 }
                 display += '</li>'
                 display += '</ul>'
@@ -200,3 +218,8 @@
     
         document.getElementById(outcome).innerHTML = display;
     }
+
+    function displaySingleEntity(context, location) {
+        document.getElementById(location).innerHTML = context;
+    }
+    
