@@ -7,19 +7,19 @@ let gameState = ["", "", "", "", "", "", "", "", ""];
 
 const winMessage = () => `Player ${currentPlayer}...You won!`;
 const drawMessage = () => `It's a draw! \r\n Try again!`;
-const currentPlayerTurns = () => `It's ${currentPlayer}'s turn`;
+const currentPlayersTurn = () => `It's ${currentPlayer}'s turn`;
 
-statusDisplay.innerHTML = currentPlayerTurns();
+statusDisplay.innerHTML = currentPlayersTurn();
 
-function handleCellPlayed(clickedCell, clickedCellIndex) {
+function cellPlayed(clickedCell, clickedCellIndex) {
 
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
 }
 
-function handlePlayerChange() {
+function playerChange() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
-    statusDisplay.innerHTML = currentPlayerTurns();
+    statusDisplay.innerHTML = currentPlayersTurn();
 }
 
 const winningConditions = [
@@ -33,7 +33,7 @@ const winningConditions = [
     [2, 4, 6]
 ];
 
-function handleResultValidation() {
+function result() {
     let roundWon = false;
     for (let i = 0; i <= 7; i++) {
         const winCondition = winningConditions[i];
@@ -61,33 +61,33 @@ function handleResultValidation() {
         return;
     }
 
-    handlePlayerChange();
+    playerChange();
 }
 
-function handleCellClick(clickedCellEvent) {
+function cellClick(clickedCellEvent) {
 
     const clickedCell = clickedCellEvent.target;
 
     const clickedCellIndex = parseInt(
-        clickedCell.getAttribute('data-cell-index')
+        clickedCell.getAttribute('index')
     );
 
     if (gameState[clickedCellIndex] !== "" || !active) {
         return;
     }
 
-    handleCellPlayed(clickedCell, clickedCellIndex);
-    handleResultValidation();
+    cellPlayed(clickedCell, clickedCellIndex);
+    result();
 }
 
-function handleRestartGame() {
+function restartGame() {
     active = true;
     currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
-    statusDisplay.innerHTML = currentPlayerTurns();
+    statusDisplay.innerHTML = currentPlayersTurn();
     document.querySelectorAll('.cell')
         .forEach(cell => cell.innerHTML = "");
 }
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
-document.querySelector('.restart').addEventListener('click', handleRestartGame);
+document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
+document.querySelector('.restart').addEventListener('click', restartGame);
